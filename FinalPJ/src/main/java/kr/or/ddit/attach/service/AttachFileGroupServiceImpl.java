@@ -24,8 +24,6 @@ public class AttachFileGroupServiceImpl implements AttachFileGroupService {
 
 	@Override
 	public int insertAttachFileGroup(AttatchFileGroupVO fileGroup, File saveFolder) {
-		log.info("fileGroup 데이터 확인 ={}", fileGroup);
-		log.info("saveFolder 데이터 확인 ={}", saveFolder);
 		int rowCnt = Optional.ofNullable(fileGroup.getAttFileList())
 							.filter((afl)->!afl.isEmpty())
 							.map((afl)-> attachFileGroupDAO.insertAttachFileGroup(fileGroup))
